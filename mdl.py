@@ -36,7 +36,7 @@ class MDL:
         
         # Iteração por política
         # π(s) = argmax_a [R(s, a) + 𝛾 * Σ(P(s'|s, a) * V(s'))]
-        [estado] = np.argmax(valores_acoes)
+        politica[estado] = np.argmax(valores_acoes)
         delta = max(delta, abs(v_antigo - self.V[estado]))
         
         if passo % 1000 == 0:
